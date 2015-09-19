@@ -1,0 +1,26 @@
+## Steps
+DO_GIT_CLONE=true
+DO_BUILD=true
+DO_DEPLOY=true
+
+
+## Repository
+# REPOSITORY="git@bitbucket.org:YourName/your-repository.git"
+REPOSITORY="https://github.com/laravel/lumen.git"
+BRANCH="master"
+
+
+## SSH (for generate-key.sh)
+SSH_KEY_IDENTIFIER="CloudUnder-Deploy"
+SSH_KEY_SIZE="4096"
+
+
+## Give volume for this configuration a unique name
+VOLUME_NAME="deploy_exampleapp_vol"
+
+
+## What Docker images to use
+IMAGE_VOLUME="cloudunder/deploy-volume:latest"
+IMAGE_GITCLONE="cloudunder/deploy-git-clone:latest"
+IMAGE_BUILDER="cloudunder/deploy-builder-mixed:latest"
+IMAGE_DEPLOYER="cloudunder/deploy-builder-mixed:latest"
